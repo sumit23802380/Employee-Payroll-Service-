@@ -7,8 +7,10 @@ public class EmployeePayrollServiceMain {
         System.out.println("Hello , Welcome to Employee Payroll Service Main Class");
         EmployeePayrollService employeePayrollService = new EmployeePayrollService();
         employeePayrollService.openEmployeePayrollDataService();
+        employeePayrollService.countFilesInEmployeePayrollServiceDataList();
         employeePayrollService.readDataFromFiles();
         employeePayrollService.writeToFile();
         employeePayrollService.readDataFromFiles();
+        employeePayrollService.countFilesInEmployeePayrollServiceDataList();
     }
 }

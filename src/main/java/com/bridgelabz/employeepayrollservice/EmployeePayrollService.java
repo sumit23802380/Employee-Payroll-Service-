@@ -1,4 +1,5 @@
 package com.bridgelabz.employeepayrollservice;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -134,6 +135,27 @@ public class EmployeePayrollService {
             System.out.println("------------------------------");
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Method to print the number of files or EmployeePayrollServiceDataList size
+     */
+    public void countFilesInEmployeePayrollServiceDataList() {
+        System.out.println("Number of files in the directory: " + countFilesInDirectory());
+    }
+
+    /**
+     * Method to count the number of files in the directory
+     * @return
+     * Count of files in directory
+     */
+    public long countFilesInDirectory() {
+        try (Stream<Path> paths = Files.walk(directory)) {
+            return paths.filter(Files::isRegularFile).count();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return 0;
         }
     }
 }
