@@ -1,5 +1,4 @@
 package com.bridgelabz.employeepayrollservice;
-
 /**
  * Employee Payroll Service Main Class
  */
@@ -8,5 +7,8 @@ public class EmployeePayrollServiceMain {
         System.out.println("Hello , Welcome to Employee Payroll Service Main Class");
         EmployeePayrollService employeePayrollService = new EmployeePayrollService();
         employeePayrollService.openEmployeePayrollDataService();
+        employeePayrollService.readDataFromFiles();
+        employeePayrollService.writeToFile();
+        employeePayrollService.readDataFromFiles();
     }
 }
